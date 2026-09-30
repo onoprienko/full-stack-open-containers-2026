@@ -1,0 +1,23 @@
+C:\Users\vit\Desktop\full-stack-open-containers-2026>docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+09923199ca0e: Pull complete 
+d9b985643753: Pull complete 
+Digest: sha256:da6fc2be547864451aa253836dd926da33623312df4a9a243e35dc877c378a78
+Status: Downloaded newer image for ubuntu:latest
+root@5223d9dbc919:/# pwd
+/
+root@5223d9dbc919:/# ls -a
+.   .dockerenv  bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+..  .rock       boot  etc  lib   media  opt  root  sbin  sys  usr
+root@5223d9dbc919:/# cd usr/
+root@5223d9dbc919:/usr# cd src/
+root@5223d9dbc919:/usr/src# mkdir app
+root@5223d9dbc919:/usr/src# cd app/
+root@5223d9dbc919:/usr/src/app# touch index.js
+root@5223d9dbc919:/usr/src/app# ls -a
+.  ..  index.js
+root@5223d9dbc919:/usr/src/app# exit
+exit
+
+C:\Users\vit\Desktop\full-stack-open-containers-2026>
