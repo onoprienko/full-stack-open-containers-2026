@@ -1,0 +1,66 @@
+C:\Users\vit\Desktop\full-stack-open-containers-2026\todo-app\todo-backend>docker compose -f docker-compose.dev.yml up -d
+[+] up 1/1
+ ✔ Container todo-backend-mongo-1 Started    
+
+C:\Users\vit\Desktop\full-stack-open-containers-2026\todo-app\todo-backend>docker exec -i todo-backend-mongo-1 mongosh -u root -p example  
+Current Mongosh Log ID: 6abe5607852e72a4100644aa
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.12.0
+Using MongoDB:          9.0.2
+Using Mongosh:          2.12.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-10-01T12:38:45.502+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-10-01T12:38:45.502+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-10-01T12:38:45.502+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-10-01T12:38:45.502+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+------
+
+test> show dbs
+admin         100.00 KiB
+config         36.00 KiB
+local          80.00 KiB
+the_database   56.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6abe397b45a7d4df552f7a2a'),
+    text: 'Write code put_test',
+    done: false
+  },
+  {
+    _id: ObjectId('6abe397b45a7d4df552f7a2b'),
+    text: 'Learn about containers',
+    done: false
+  }
+]
+the_database> db.todos.insertOne( { text: "Increase the number of tools in my tool belt", done: false } )
+{
+  acknowledged: true,
+  insertedId: ObjectId('6abe578a852e72a4100644ab')
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6abe397b45a7d4df552f7a2a'),
+    text: 'Write code put_test',
+    done: false
+  },
+  {
+    _id: ObjectId('6abe397b45a7d4df552f7a2b'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('6abe578a852e72a4100644ab'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database> 
