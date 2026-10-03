@@ -10,6 +10,7 @@ export default defineConfig({
     watch: {
       usePolling: true, // Forces file scanning over Windows-to-Linux mounts
     },
+    allowedHosts: ['app', 'localhost'],
   },
   test: {
     environment: 'jsdom',
