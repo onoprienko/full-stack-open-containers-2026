@@ -5,7 +5,7 @@ const redis = require('../redis')
 router.get('/', async (req, res) => {
   const addedTodos = await redis.get('addedTodos')
   res.send({
-    added_todos: addedTodos,
+    added_todos: Number(addedTodos),
   })
 })
 
