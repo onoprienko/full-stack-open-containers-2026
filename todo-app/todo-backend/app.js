@@ -1,6 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+const path = require('path')
 
 const indexRouter = require('./routes/index')
 const todosRouter = require('./routes/todos')
@@ -16,5 +17,7 @@ app.use(express.json())
 app.use('/', indexRouter)
 app.use('/todos', todosRouter)
 app.use('/statistics', statisticsRouter)
+
+app.use(express.static(path.join(__dirname, '../app')))
 
 module.exports = app
