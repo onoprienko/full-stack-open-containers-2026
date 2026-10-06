@@ -5,9 +5,9 @@ on:
     branches: [main, master]
 
 env:
-  MONGO_URL:${{ secrets.MONGO_URL }}
-  REDIS_URL:${{ secrets.REDIS_URL }}
-  VITE_BACKEND_URL:${{ secrets.VITE_BACKEND_URL }}
+  MONGO_URL: ${{ secrets.MONGO_URL }}
+  REDIS_URL: ${{ secrets.REDIS_URL }}
+  VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
 
 jobs:
   e2e-tests:
