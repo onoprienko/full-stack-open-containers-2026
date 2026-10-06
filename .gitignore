@@ -9,7 +9,7 @@ todo-app/test-results/
 todo-app/playwright-report/
 todo-app/playwright/.cache/
 
-playwright-report
+todo-tests/playwright-report
 playwright/.cache/
 
 test-results/
