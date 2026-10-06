@@ -4,11 +4,11 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . .
 
+ENV MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+
+ENV REDIS_URL=redis://redis:6379
+
 RUN npm ci --omit=dev
-
-ENV MONGO_URL=
-
-ENV REDIS_URL=
 
 USER node
 
